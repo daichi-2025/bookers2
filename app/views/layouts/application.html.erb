@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src="https://kit.fontawesome.com/6ab161fb74.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -14,10 +15,10 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <%# if user_signed_in? %> <!-- コメントアウト中 -->
-          <a class="navbar-brand" href="/">
-            <span>Bookers</span>
-          </a>
+          <% if user_signed_in? %> 
+            <a class="navbar-brand" href="/">
+              <span>Bookers</span>
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" arai-expanded="false" arai-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,44 +26,82 @@
               <ul class="navbar-nav ml-auto">
                 <li>
                   <a class="nav-link text-light" href="/">
-                    <i class=2fa-solid fa-home"></i>
+                    <i class="fa-solid fa-home"></i>
                       Home
                   </a>
                 </li>
-          
-      <% if user_signed_in? %>
-        <p>Bookers<p>
-        <li>     
-          <%= link_to "Home", new_user_registration_path %>
-        </li>
-        <li>
-          <%= link_to "Users", new_user_registration_path %>
-        </li>
-        <li>
-          <%= link_to "Books", new_user_registration_path %>
-        </li>
-        <li>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-        </li>
-      <% else %>
-        <p>Bookers<p>
-        <li>
-           <%= link_to "Home", new_user_registration_path %>
-        </li>
-        <li>
-          <%= link_to "About", new_user_registration_path %>
-        </li>
-        <li>
-          <%= link_to "Sign up", new_user_registration_path %>
-        </li>
-        <li>
-          <%= link_to "Log in", new_user_session_path %>
-        </li>
-      <% end %>
+                <li>
+                  <a class="nav-link text-light" href="/home/about">
+                    <i class="fa-solid fa-link"></i>
+                      About
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-link text-light" href="/users/sign_up">
+                    <i class="fa-solid fa-user-plus"></i>
+                      Sign up
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-link text-light" href="users/sign_in">
+                  <i class="fa-solid fa-sign-in-alt"></i>
+                    Log in
+                  </a>
+                </li>
+              </ul>
+            </div>
+          <% else %>
+            <a class="navbar-brand" href="/">
+              <span>Bookers</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" arai-expanded="false" arai-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav ml-auto">
+                <li>
+                  <a class="nav-link text-light" href="/">
+                    <i class="fa-solid fa-home"></i>
+                      Home
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-link text-light" href="/users">
+                    <i class="fa-solid fa-users"></i>
+                      Users
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-link text-light" href="/books">
+                    <i class="fa-solid fa-book-open"></i>
+                      Books
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-link text-light" rel="nofollow" data-method="delete" href="users/sign_out">
+                  <i class="fa-solid fa-sign-out-alt"></i>
+                    Log out
+                  </a>
+                </li>
+              </ul>
+            </div>
+          <% end %>
+        </div>
+      </nav>
     </header>
+
+    <main></main>
+    
     <footer>
-      
+      <div class="container mt-5>
+        <div class="row">
+          <div class="mx-auto">
+            <p class="text-center">CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
     </footer>
+
     <%= yield %>
   </body>
 </html>
