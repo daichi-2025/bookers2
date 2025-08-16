@@ -31,7 +31,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="nav-link text-light" href="/home/about">
+                  <a class="nav-link text-light" href="/homes/about">
                     <i class="fa-solid fa-link"></i>
                       About
                   </a>
@@ -91,26 +91,8 @@
     </header>
 
     <main>
-      <div class="container">
-        <div class="row">
-          <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
-            <h1>welcome to <i class="fa-solid fa-book"></i><strong>Bookers</strong>!!</h1>
-            <P>In <i class="fa-solid fa-book"></i><strong>Bookers</strong>,</p>  
-            <p>you can share and exchange your opinions , inpressions , and emotions about various books!</p>
-            <div class="btn-wrapper col-10 mx-auto">
-              <div class="row">
-                <a class="btn btn-info btn-sm btn-block mb-3 sign-in" href="/users/sign_in">Log in</a>
-              </div>
-              <div class="row">
-                <a class="btn btn-success btn-sm btn-block sign_up" href="/users/sign_up">Sign up</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <%= yield %> 
     </main>
-
-    <%= yield %> 
     
     <footer>
       <div class="container mt-5>
