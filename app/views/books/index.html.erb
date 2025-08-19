@@ -3,9 +3,18 @@
     <div class="col-4">
     <h1>User info</h1>
     
+    
 
     <p>name</p>
     <p>introduction</p>
+
+    <div class="btn-wrapper col-10 mx-auto">
+        <div class="row">
+          <%= link_to edit_user_path(current_user), class:"btn btn-outline-secondary btn-block edit-user" do %>
+            <i class="fas fa-user-cog"></i>
+          <% end %>
+        </div>
+    </div>
 
     <h1>New Book</h1>
     <%= form_with model: Book.new do |f| %>
