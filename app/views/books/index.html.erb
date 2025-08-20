@@ -3,7 +3,7 @@
     <div class="col-4">
     <h1>User info</h1>
     
-    
+    <%= image_tag @user.get_profile_image(100,100) %>
 
     <p>name</p>
     <p>introduction</p>
@@ -29,6 +29,12 @@
 
     </div>
 
-    <div class="col-8"></div>
+    <div class="col-8">
+      <h1>Books</h1>
+      <% @books.each do |book| %>
+        <span><%= book.title %></span>
+        <span><%= book. body %></span>
+      <% end %>
+    </div>
   </div>
 </div>
