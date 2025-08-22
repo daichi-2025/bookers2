@@ -3,8 +3,18 @@
   <%= image_tag @user.get_profile_image(100, 100) %>
 <% end %>
   
-<p>name</p>
-<p>introduction</p>
+<table>
+  <tr>
+    <th>name</th>
+    <th><%= @user.name %></th>
+  </tr>
+  <tr>
+    <th>introduction</th>
+    <th><%= @user.introduction %></th>
+  </tr>
+    
+  </tr>
+</table>
 
 <div class="btn-wrapper col-10 mx-auto">
   <div class="row">

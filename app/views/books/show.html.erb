@@ -7,11 +7,24 @@
     <div class="col-8">
       <h1>Book detail</h1>
       <table>
-        <tr></tr>
-        <tr></tr>
-        <tr></tr>
-        <tr></tr>
-        <tr></tr>
+        <tr>
+
+        </tr>
+        <tr>
+          <%= @book.title %>
+        </tr>
+        <tr>
+          <%= @book.body %>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+          <% if @user == current_user %>
+            <%= link_to book_path, method: :delete do %>
+              Destroy
+            <% end %>
+          <% end %>
+        </tr>
       </table>
     </div>
   </div>
