@@ -1,16 +1,16 @@
 <h1>User info</h1>
-<% if @user.present? %>
+<% if user.present? %>
   <%= image_tag @user.get_profile_image(100, 100) %>
 <% end %>
   
 <table>
   <tr>
     <th>name</th>
-    <th><%= @user.name %></th>
+    <th><%= user.name %></th>
   </tr>
   <tr>
     <th>introduction</th>
-    <th><%= @user.introduction %></th>
+    <th><%= user.introduction %></th>
   </tr>
     
   </tr>

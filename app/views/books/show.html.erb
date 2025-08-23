@@ -16,15 +16,18 @@
         <tr>
           <%= @book.body %>
         </tr>
+        <% if @user == current_user %>
         <tr>
-        </tr>
-        <tr>
-          <% if @user == current_user %>
-            <%= link_to book_path, method: :delete do %>
-              Destroy
-            <% end %>
+          <%= link_to edit_book_path do %>
+            Edit
           <% end %>
         </tr>
+        <tr>
+          <%= link_to book_path, method: :delete do %>
+            Destroy
+          <% end %>
+        </tr>
+        <% end %>
       </table>
     </div>
   </div>
