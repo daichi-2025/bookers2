@@ -1,6 +1,17 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>User Info</h1>
 
-<%= form_with model: @User do |f| %>
+<%= form_with model: @user, url: edit_user_path(@user.id), method: :patch do |f| %>
+
+  <p>Name</p>
+  <%= f.text_field :title %>
+
+  <p>Image</p>
   <%= f.file_field :image, accept: "image/*" %>
+
+  <p>Introduction</p>
+  <%= f.text_field :body %>
+      
+  <%= f.submit 'Update User' %>
+      
 <% end %>
+
