@@ -1,15 +1,15 @@
 <h1>User Info</h1>
 
-<%= form_with model: @user, url: edit_user_path(@user.id), method: :patch do |f| %>
+<%= form_with model: @user, url: user_path(@user.id) do |f| %>
 
   <p>Name</p>
-  <%= f.text_field :title %>
+  <%= f.text_field :name %>
 
   <p>Image</p>
   <%= f.file_field :image, accept: "image/*" %>
 
   <p>Introduction</p>
-  <%= f.text_field :body %>
+  <%= f.text_field :introduction %>
       
   <%= f.submit 'Update User' %>
       

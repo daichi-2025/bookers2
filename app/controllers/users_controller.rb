@@ -11,6 +11,11 @@ class UsersController < ApplicationController
     redirect_to books_path
   end
 
+  def index
+    @user = current_user
+    @users = User.all
+  end
+
   def edit
     @user = User.find(params[:id])
   end
@@ -27,7 +32,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :profile_image)
+    params.require(:user).permit(:name, :profile_image, :introduction)
   end
 end
 
