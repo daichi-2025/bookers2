@@ -6,6 +6,15 @@ class ApplicationController < ActionController::Base
     user_path(resourse)
   end
 
+  def create
+    @book = Book.new(book_params)
+    if @book.save
+      redirect_to book_path(@book.id)
+    else
+      render :index
+    end
+  end
+
   protected
 
   def configure_permitted_parameters

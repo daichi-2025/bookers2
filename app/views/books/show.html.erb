@@ -9,7 +9,9 @@
       <table>
         <tr>
           <%= image_tag @user.get_profile_image(100,100) %>
-          <%= @user.name %>
+          <%= link_to user_path(@user.id) do %> 
+            <% @user.name %>
+          <% end %>
         </tr>
         <tr>
           <%= @book.title %>
