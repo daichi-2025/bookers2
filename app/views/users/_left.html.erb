@@ -1,6 +1,6 @@
 <h1>User info</h1>
 <% if user.present? %>
-  <%= image_tag @user.get_profile_image(100, 100) %>
+  <%= image_tag user.get_profile_image(100, 100) %>
 <% end %>
   
 <table>
@@ -18,7 +18,7 @@
 
 <div class="btn-wrapper col-10 mx-auto">
   <div class="row">
-    <%= link_to edit_user_path(current_user), class:"btn btn-outline-secondary btn-block edit-user" do %>
+    <%= link_to edit_user_path(user.id), class:"btn btn-outline-secondary btn-block edit-user" do %>
       <i class="fas fa-user-cog"></i>
     <% end %>
   </div>
