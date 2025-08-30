@@ -11,18 +11,18 @@
         </ul>
       <% end %>
 
-      <h1>Editting Book</h1>
+      <h1>Editing Book</h1>
 
       <%= form_with model: @book, url: update_book_path(@book.id), method: :patch do |f| %>
 
         <div class="field">
           <p>Title</p>
-          <%= f.text_field :title %>
+          <%= f.text_field :title, class:"form-control" %>
         </div>
 
         <div class="field">
           <p>Opinion</p>
-          <%= f.text_field :body %>
+          <%= f.text_area :body, class:"form-control mb-3" %>
         </div>
          
         <div class="field">
